@@ -6,16 +6,17 @@
 
     Instruction:
     1) Put this file at the root of the project folder the same level as "main.js" and ".env" file
-    2) Prepend this code at the most top of your main.js file:
-        global.env = require('./env').parse()
+    2) Prepend this code at the most top in your main.js file:
+        global.env = require('./node-env-parser').parse()
     3) You can access your ENV variables anywhere in your project (server-side)
     4) Please suggest revisions of this code to enhance it
+
+    #IfThereIsAWillThereIsAnAlgorithm
 */
 
 
 const fs = require('fs')
-const env_path = './.env'
-
+const env_path = './.env'  // path of your .env file
 
 
 // array value type evaluator
@@ -47,8 +48,6 @@ const evaluator = function(str) {
     // for unknown       
     return undefined
 }
-
-
 
 
 exports.parse = function() {
@@ -135,7 +134,6 @@ exports.parse = function() {
         }
     }
     // console.log(tokens3)
-
 
     final_tokens = tokens3
     return final_tokens
